@@ -1,332 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Fuji Mentari Endiany</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <title>Creative Portfolio - Fuji Mentari Endiany</title>
     <style>
-        /* --- CSS STYLING --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: #fcfcfc;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            /* Menambahkan Background Abstract Blue dari source dokumen */
+            background-image: url('https://img.freepik.com/free-photo/marbled-blue-abstract-background-liquid-marble-pattern_1258-82626.jpg?semt=ais_hybrid&w=740&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-
-        /* Navigation */
+        .container {
+            /* Efek Glassmorphism agar background tetap terlihat transparan elegan */
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+        }
         header {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
+            text-align: center;
+            border-bottom: 3px solid #fbbc05;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 600;
-            color: #3498db;
-            letter-spacing: 1px;
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fbbc05;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
+        h1 {
+            color: #001f3f;
+            margin-bottom: 5px;
+            font-size: 2.5em;
         }
-
-        .nav-links li {
-            margin-left: 30px;
+        h2 {
+            color: #001f3f;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 35px;
         }
-
-        .nav-links a {
-            text-decoration: none;
+        h3 {
+            color: #444;
+            margin-bottom: 5px;
+        }
+        .contact-info {
             color: #555;
-            font-weight: 400;
-            transition: 0.3s;
-            font-size: 0.95rem;
+            font-size: 1em;
+            margin-top: 10px;
         }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #3498db;
+        .date {
+            color: #777;
+            font-style: italic;
+            font-size: 0.9em;
         }
-
-        /* Sections */
-        section {
-            padding: 100px 10%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .intro-text {
+            font-size: 1.1em;
+            text-align: justify;
         }
-
-        .hero {
-            background: linear-gradient(135deg, #ffffff 0%, #f1f4f8 100%);
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
             text-align: left;
         }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            line-height: 1.2;
+        th {
+            background-color: #001f3f;
+            color: #ffffff;
         }
-
-        .highlight {
-            color: #3498db;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #666;
-            max-width: 600px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 12px 35px;
-            background: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
-            width: max-content;
-        }
-
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        /* Section Titles */
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background: #3498db;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-        }
-
-        /* Expandable Content (Terusan) */
-        .more-content {
-            display: none; /* Disembunyikan secara default */
+        .portfolio-image {
+            width: 100%;
+            border-radius: 8px;
             margin-top: 15px;
-            color: #555;
-            padding-top: 15px;
-            border-top: 1px dashed #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-
-        .read-more-btn {
-            background: none;
-            border: none;
-            color: #3498db;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .read-more-btn:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-
-        /* Project Cards */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .project-card {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid #eee;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            border-color: #3498db;
-        }
-
-        .project-card h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        /* Footer */
-        footer {
-            background: #f1f4f8;
+        .portfolio-quote {
             text-align: center;
-            padding: 40px 0;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
+            font-style: italic;
+            color: #555;
+            margin-top: 15px;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
+<div class="container">
     <header>
-        <div class="logo">PORTFOLIO</div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <img src="fuji.jpg" alt="Profile Fuji Mentari" class="profile-img">
+        
+        <h1>Fuji Mentari Endiany</h1>
+        <h2>Strategic Communications</h2>
+        <div class="contact-info">
+            <p><strong>Tangerang, Banten | Indonesia</strong><br>
+               Email: fujimentariendiany@gmail.com | Social: @mentariief_</p>
+        </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="hero">
-        <h1>Hello, I'm <br><span class="highlight">Fuji Mentari Endiany</span></h1>
-        <p>A tech enthusiast focused on creating clean, modern, and functional digital experiences.</p>
-        <a href="#projects" class="btn">View Portfolio</a>
+    <section id="introduction">
+        <h2>Introduction</h2>
+        <p class="intro-text">
+            <strong>Universitas Multimedia Nusantara Graduate</strong><br>
+            Saya adalah individu yang antusias dalam menghadapi tantangan baru - bagi saya, tantangan adalah tempat terbaik untuk berkembang. Berbekal latar belakang di Ilmu Komunikasi, saya memiliki kemampuan berpikir analitis, kolaborasi tim, dan adaptasi yang cepat terhadap perubahan situasi.
+        </p>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <div style="max-width: 800px;">
-            <p>
-                I am a web developer who loves learning new things. My main focus is building attractive user interfaces with clean code. I believe that good design is a design that makes it easier for users.
-            </p>
-            
-            <!-- Konten Terusan (Sembunyi) -->
-            <div id="about-more" class="more-content">
-                <p>Beyond coding, I am deeply passionate about exploring system operations and computational mathematics. I always strive to bridge the gap between complex logic and beautiful design, ensuring every project I work on is both efficient under the hood and visually stunning on the screen.</p>
-            </div>
-            <!-- Tombol Click -->
-            <button class="read-more-btn" onclick="toggleContent('about-more', this)">Read More</button>
-        </div>
+    <section id="academic-background">
+        <h2>Academic Background</h2>
+        <h3>Multimedia Nusantara</h3>
+        <p class="date">2021-2025</p>
+        <p>Communication Science (Strategic Communications)<br>
+        GPA: 3.68/4.00</p>
+        
+        <h3>SMAN 04 Pandeglang</h3>
+        <p class="date">2018-2021</p>
+        <p>Major: Natural Science<br>
+        GPA: 84.64/100</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h3>E-Commerce UI</h3>
-                <p>Modern online store interface design with responsive features for all devices.</p>
-                <div id="proj1-more" class="more-content">
-                    <p><strong>Tools used:</strong> HTML, CSS, JavaScript.<br>This project includes product filtering, an interactive shopping cart, and a seamless checkout simulation.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleContent('proj1-more', this)">Read More</button>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h3>Personal Brand</h3>
-                <p>Development of visual identity and portfolio websites for creative professionals.</p>
-                <div id="proj2-more" class="more-content">
-                    <p><strong>Tools used:</strong> Figma, CSS Grid, CSS Animations.<br>Focused on creating a unique digital footprint with smooth scrolling effects and custom typography.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleContent('proj2-more', this)">Read More</button>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <h3>Dashboard Analytics</h3>
-                <p>A complex data visualization system that remains easily understood by users.</p>
-                <div id="proj3-more" class="more-content">
-                    <p><strong>Tools used:</strong> JavaScript (Chart.js), Bootstrap.<br>Designed to track real-time metrics, featuring interactive graphs and a dark-mode toggle functionality.</p>
-                </div>
-                <button class="read-more-btn" onclick="toggleContent('proj3-more', this)">Read More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" style="background: #fdfdfd;">
-        <h2>Contact Me</h2>
-        <p>Interested in working together or just want to say hi?</p>
-        <br>
-        <a href="mailto:emailanda@gmail.com" class="btn">Send Email</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Fuji Mentari Endiany. Made with Code & Coffee.</p>
-    </footer>
-
-    <!-- --- JAVASCRIPT --- -->
-    <script>
-        // Efek menu aktif saat scroll
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll(".nav-links li a");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((a) => {
-                a.classList.remove("active");
-                if (a.getAttribute("href").includes(current)) {
-                    a.classList.add("active");
-                }
-            });
-        });
-
-        // Fungsi untuk tombol klik "Read More"
-        function toggleContent(contentId, btnElement) {
-            const content = document.getElementById(contentId);
-            
-            // Jika konten sedang disembunyikan
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block"; // Tampilkan konten
-                btnElement.textContent = "Read Less"; // Ubah teks tombol
-            } else {
-                content.style.display = "none"; // Sembunyikan konten
-                btnElement.textContent = "Read More"; // Kembalikan teks tombol
-            }
-        }
-    </script>
-</body>
-</html>
+    <section id="work-history">
+        <h2>Work History</h2>
+        <h3>PT Wijaya Karya</h3>
+        <p><strong>Corporate Comm Intern</strong> <span class="date">(Feb 2024-Jun 2024)</span></p>
+        <p>Media monitoring, press
